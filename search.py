@@ -20,7 +20,7 @@ class lookup:
         '''
         Main search task
         '''
-        SHODAN_API_KEY = 'YOUR API HERE'
+        SHODAN_API_KEY = 'vKuTMHaEM7dgjGGpe4DsPe4ot2KBulPS'
         try:
             api = shodan.Shodan(SHODAN_API_KEY)
         except:
@@ -31,19 +31,10 @@ class lookup:
         out_results = []
         for result in results['matches']:
             ip = result['ip_str']
-            try:
-                country = result['country_code']
-            except:
-                country = ''
-            try:
-                data = result['data']
-            except:
-                data = ''
-            try:
-                isp = result['isp']
-            except:
-                isp = ''
-            plc = host(ip, country, data, isp)
+            location = result['location']
+            data = result['data']
+            isp = result['isp']
+            plc = host(ip, location, data, isp)
             out_results.append(plc)
         self.results = out_results
 
@@ -53,8 +44,8 @@ class host:
     Class for each host in the search results
     '''
 
-    def __init__(self, ip, country, data, isp):
+    def __init__(self, ip, location, data, isp):
         self.ip = ip
-        self.country = country
+        self.location = location
         self.data = data
         self.isp = isp
