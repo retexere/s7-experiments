@@ -15,7 +15,7 @@ def main():
                       help='Country to locate PLCs')
     parser.add_option('-t', dest='toption', type='string',
                       help='City to locate PLCs')
-    parser.add_option('-f', dest='foption', type='string',
+    parser.add_option('-o', dest='foption', type='string',
                       help='File to return data')
     parser.add_option('-p', dest='poption', type='int',
                       help='Page number of SHODAN search')
