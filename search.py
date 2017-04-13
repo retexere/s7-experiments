@@ -20,7 +20,7 @@ class lookup:
         '''
         Main search task
         '''
-        SHODAN_API_KEY = 'vKuTMHaEM7dgjGGpe4DsPe4ot2KBulPS'
+        SHODAN_API_KEY = 'YOUR API KEY HERE'
         try:
             api = shodan.Shodan(SHODAN_API_KEY)
         except:
